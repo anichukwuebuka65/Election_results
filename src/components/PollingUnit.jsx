@@ -55,7 +55,7 @@ export default function pollingUnit({data, setData, lga}) {
         })
     },[])
 
-    if (isPageLoading) return (<p className='loading'>loadiing ...</p>)
+    if (isPageLoading) return (<p className='loading'>loading ...</p>)
 
   return (
         <div>
