@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { BASE_URL } from '../App'
+import "../helpers/functions"
 
 export default function pollingUnit({data, setData, lga}) {
     const [selectedLga, setSelectedLga] = useState("")
@@ -50,6 +51,7 @@ export default function pollingUnit({data, setData, lga}) {
         fetch(`${BASE_URL}/lga-with-pu`)
         .then((res) => res.json())
         .then(data => {
+            console.log(data)
             setData(data)
             setSelectedLga(data[0].lga_name)
         })
@@ -75,8 +77,7 @@ export default function pollingUnit({data, setData, lga}) {
                 onChange={(e) => setSelectedPU(({uniqueid: e.target.value}))}
                 >
                    {
-                    data
-                    .filter(item => item.lga_name === selectedLga)
+                     data.filter(item => item.lga_name === selectedLga)
                     .filterDuplicate("polling_unit_name")
                     .map(pollingUnit => (
                         <option key={pollingUnit.uniqueid} value={pollingUnit.uniqueid}>
@@ -89,16 +90,4 @@ export default function pollingUnit({data, setData, lga}) {
             <div className='container'>{loading ? (<p className='loading'>Loading....</p>) : displayedResults  }</div>
         </div>
   )
-}
-
-Array.prototype.filterDuplicate = function(value) {
-    const duplicate = []
-    const arr = []
-    this.forEach(element => {
-        if (!duplicate.includes(element[value])){
-            duplicate.push(element[value])
-            arr.push(element)
-        }    
-    });
-    return arr
 }

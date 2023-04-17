@@ -2,8 +2,9 @@ import { useState } from 'react'
 import NewPollingUnit from './components/NewPollingUnit'
 import PollingUnit from './components/PollingUnit'
 import TotalSum from './components/TotalSum'
+import "./helpers/functions"
 
-export const BASE_URL = "http://localhost:3306";
+export const BASE_URL = "https://electionbackend-production.up.railway.app";
 
 function App() {
   const [page, setPage] = useState("pollingUnit")
