@@ -18,7 +18,7 @@ export default function TotalSum({lga}) {
       body: JSON.stringify({id: selectedLga.id})
     })
     .then(res => res.json())
-    .then(sum => setSum(sum[0].sum))
+    .then(sum => setSum(sum.reduce((curr, obj) => curr + obj.sum, 0)))
     .finally(() => setLoading(false))
   },[selectedLga])
 

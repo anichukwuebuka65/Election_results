@@ -73,7 +73,7 @@ export default function AddPollingUnit({setShowScore, setPUId, message, setMessa
                 <input value={fields["polling_unit_description"]} onChange={handleChange} type="text" name="polling_unit_description" required/>
             </div>
 
-            <button className='button btn' type="submit">Add Polling Unit</button>
+            <button className='button btn' type="submit">add unit</button>
         </form>
     </div>
   )

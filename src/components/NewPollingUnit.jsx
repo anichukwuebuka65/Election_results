@@ -6,7 +6,7 @@ import AddScore from './AddScore'
 export default function NewPollingUnit() {
     const[showScore, setShowScore] = useState(false)
     const [PUId, setPUId] = useState("")
-    const [message, setMessage] = useState("hell")
+    const [message, setMessage] = useState("")
 
   return (
     <div >

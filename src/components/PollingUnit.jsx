@@ -16,7 +16,7 @@ export default function pollingUnit({data, setData, lga}) {
                         ))
     const displayedResults = results.length > 0 ?  (
     <>
-        <h2>Results for {selectedPU?.polling_unit_name} of {selectedLga}</h2>
+        <h2> {selectedPU?.polling_unit_name} of {selectedLga}</h2>
         <ul className="list">{ liList }</ul> 
     </>
     ): (<p className='info'>No results for this polling unit</p>)
@@ -61,13 +61,13 @@ export default function pollingUnit({data, setData, lga}) {
         <div>
             <h1 className="heading">Find results for a polling unit</h1>
             <div className="wrapper">
-                <label htmlFor="lga">Select logal Government:</label>
+                <label htmlFor="lga">lga:</label>
                 <select name="lga" className="select lga" value={selectedLga} onChange={(e) => setSelectedLga(e.target.value)}>
                     { lga.map(lga => (<option key={lga.name} value={lga.name}>{lga.name}</option>)) }  
                 </select>
             </div>
             <div>
-                <label htmlFor="polling"> Choose a polling Unit:</label>
+                <label htmlFor="polling">polling unit:</label>
                 <select 
                 name="polling" 
                 className="select polling" 
@@ -86,7 +86,7 @@ export default function pollingUnit({data, setData, lga}) {
                    }
                 </select>
             </div>
-            <div>{loading ? (<p className='loading'>Loading....</p>) : displayedResults  }</div>
+            <div className='container'>{loading ? (<p className='loading'>Loading....</p>) : displayedResults  }</div>
         </div>
   )
 }

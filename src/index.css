@@ -7,43 +7,52 @@
     padding: 0;
     margin: 0;
     font-family: "Rubik";
+    font-size: 16px;
 }
 
 body {
     font-size: 18px;
     font-weight: 400;
     padding: 15px;
+    background-color: rgb(252, 241, 252);
 }
 
 .app {
-    max-width: 600px;
-    overflow-y: scroll;
+    max-width: 400px;
+    overflow-y: auto;
     margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 40px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+  
 }
 h1, h2 {
-    font-size: 2rem;
-    color: rgb(46, 46, 114);
+    font-size: 1.5rem;
+    line-height: 1;
+    color: rgb(22, 22, 39);
     margin-bottom: 25px;
     text-align: center;
 }
 h2 {
-  font-size: 1.2rem;
+  color: rgb(52, 158, 92);
+  font-size: 1.1rem;
+  text-transform: lowercase;
   text-align: center;
-  text-decoration: underline;
   margin-top: 1.5rem;
 }
 
 label {
     display: block;
-    color:rgb(134, 140, 146);
-    font-weight: 500;
+    color:rgb(150, 156, 167);
     margin-bottom: 5px;
+    font-size: 14px;
 }
 
 .select,select ,input{
     font-size: 1rem;
     font-family: inherit;
-    color:rgb(68, 79, 87);
+    color:rgb(116, 123, 129);
     padding: 5px 16px;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -60,8 +69,7 @@ label {
 
 .list {
     list-style-type: none;
-    background-color: rgb(241, 250, 250);
-    color: rgb(31, 27, 37);
+    box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.1);
     font-size: 1.5rem;
     opacity: 0.8;
     border-radius: 10px;
@@ -69,11 +77,24 @@ label {
     margin: 20px 0px;
 }
 
+
 .list__item {
     display: flex;
     justify-content: space-between;
-    border-bottom: 2px solid rgb(216, 203, 203);
+    align-items: end;
+    border-bottom: 1px solid rgb(241, 227, 227);
     margin-bottom: 20px;
+    color:rgb(10, 10, 10)
+}
+
+.list__item span:first-child {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.list__item span:last-child {
+  font-size: 20px;
+  color:rgb(12, 12, 12)
 }
 
 input {
@@ -82,14 +103,19 @@ input {
 
 .button {
     display: block;
-    font-size: 24px;
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
     border-radius: 6px;
     padding: 7px 30px;
     border: 0px;
     margin: 10px 0px;
-    background-color: rgb(46, 46, 114);
+    background-color: rgb(49, 49, 54);
     color: white;
+}
+
+.button:hover {
+     background-color: rgb(29, 29, 36);
 }
 
 .info {
@@ -110,19 +136,18 @@ input {
 }
 
 .btn_container {
-  display: flex;
-  justify-content: space-between;
-  gap: 2px;
-  margin-top: 32px;
-  max-width: 400px;
+  margin-top: 20px;
 }
 
 .btn_container button {
-  padding: 7px 10px;
-  border: 1px solid gray;
-  border-radius: 1px;
+  display: block;
+  font-size: 14px;
+  text-decoration: underline;
+  color:rgb(44, 44, 156);
+  background-color: inherit;;
+  margin-bottom: 10px;
+  border: none;
   cursor: pointer;
-  border-radius: 6px;
   }
 
   .form {
@@ -151,6 +176,7 @@ input {
     opacity: 0.9;
   }
 
+
   @media (min-width: 700px) {
     .add_score {
         display: grid;
@@ -159,6 +185,6 @@ input {
     }
 
     .add_score .btn {
-        grid-column: 1 / 1;
+        grid-column: 1 / -1;
     }
   }

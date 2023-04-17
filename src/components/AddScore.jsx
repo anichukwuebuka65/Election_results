@@ -31,6 +31,7 @@ export default function AddScore({PUId, setShowScore, setMessage}) {
     }
 
     function handleChange(e) {
+        
         setScores(prev => ({...prev, [e.target.name]: e.target.value}))
     }
 
@@ -49,11 +50,13 @@ export default function AddScore({PUId, setShowScore, setMessage}) {
             <h1>Add Scores for this polling unit</h1>
             <form className='form' onSubmit={handleSubmit}>
 
-                {parties.map(({partyname})=> 
+                {
+                parties.map(({partyname})=> 
                 <div key={partyname}>
                     <label htmlFor={partyname}>{partyname}:</label>
                     <input value={scores[partyname]} type="text" name={partyname} onChange={handleChange} required/>
-                </div>)}
+                </div>)
+                }
                     <div className='span_two'>
                         <label htmlFor="enteredBy">Official's name:</label>
                         <input value={enteredBy} onChange={(e) => setEnterdBy(e.target.value)} type="text" id="enteredBy" required/>

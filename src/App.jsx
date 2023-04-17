@@ -3,7 +3,7 @@ import NewPollingUnit from './components/NewPollingUnit'
 import PollingUnit from './components/PollingUnit'
 import TotalSum from './components/TotalSum'
 
-export const BASE_URL = "https://electionresultsbackend-production.up.railway.app"
+export const BASE_URL = "http://localhost:3306";
 
 function App() {
   const [page, setPage] = useState("pollingUnit")
