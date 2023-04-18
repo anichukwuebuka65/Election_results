@@ -32,7 +32,7 @@ export default function pollingUnit({data, setData, lga}) {
             body: JSON.stringify({id: selectedPU.uniqueid})
         })
         .then(res => res.json())
-        .then(data => { setResults(data)})
+        .then(data => { if (Array.isArray(data)) setResults(data)})
         .finally(() => {
             setIsPageLoading(false)
             setLoading(false)
