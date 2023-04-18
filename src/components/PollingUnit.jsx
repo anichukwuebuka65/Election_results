@@ -51,7 +51,7 @@ export default function pollingUnit({data, setData, lga}) {
         fetch(`${BASE_URL}/lga-with-pu`)
         .then((res) => res.json())
         .then(data => {
-            If(Array.isArray(data){
+            If(Array.isArray(data)){
                setData(data)
             setSelectedLga(data[0].lga_name)
            }
